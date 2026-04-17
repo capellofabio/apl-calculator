@@ -3,3 +3,7 @@
 nav>p {
     text-shadow: 0px 0px 1px #bd0027;
 }
+
+.item-wrapper {
+    margin-top: 20px;
+}

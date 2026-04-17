@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   </head>
-  <body class="font-[space_grotesk] bg-[#0B1326]">
+  <body class="font-[space_grotesk] bg-[#0B1326] text-white">
     <nav class="px-6 py-4 items-center flex justify-between md:justify-normal">
       <p class="font-bold text-[#DC143C] text-2xl mr-10">NITRO'S CALCULATOR</p>
       <ul id="nav-list" class="hidden md:flex gap-5 items-center text-[#DAE2FD]/60">
@@ -27,7 +27,115 @@
       </button>
     </nav>
 
-    <h1 class="text-white font-bold text-4xl">INCOME_PROTOCOLS</h1>
+    <main class="p-8 grid lg:grid-cols-12 gap-6 grid-cols-1">
+
+      <!-- Upper Row -->
+      <header id="upper-row" class="lg:col-span-12 flex justify-between flex-col md:flex-row border-b-5 border-[#131b2e] shadow-2xl pb-5">
+
+        <div id="heading-wrapper">
+          <h1 class="text-white font-bold text-4xl italic">INCOME_PROTOCOLS</h1>
+          <p class="text-[#00DBE7]">SECTOR 07 // TACTICAL OVERLAY ACTIVE</p>
+        </div>
+
+        <div id="token-event" class="border-l-4 border-red-600 bg-[#222A3D] px-7 py-3">
+          <p class="text-[#E6BDBC]">TOKEN EVENT</p>
+          <p class="text-[#00DBE7]">1.00x <span class="text-[#00dbe780]">MULTI</span></p>
+        </div>
+
+      </header>
+
+      <!-- Left Column -->
+      <div id="left-column" class="lg:col-span-3">
+
+        <div id="best-token-items" class="bg-[#131B2E] p-5 overflow-hidden overflow-y-scroll h-90 border-l-3 border-red-600">
+
+          <h2 class="text-[#DAE2FD]">BEST_TOKEN_ITEMS</h2>
+
+          <div class="item-wrapper flex bg-[#222A3D] lg:p-2 xl:p-5 items-center">
+            <img src="src/assets/items/neutron-booster.png" alt="neutron booster" class="mr-5 shrink-0">
+            <div>
+              <h3>NEUTRON BOOSTER</h3>
+              <p class="text-[#00DBE7]">BASE: 950 TKN</p>
+            </div>
+          </div>
+
+          <div class="item-wrapper flex bg-[#222A3D] lg:p-2 xl:p-5 items-center border-l-5 border-[#00DBE7]">
+            <img src="src/assets/items/elite-generator.png" alt="elite generator"  class="mr-5">
+            <div>
+              <h3>ELITE GENERATOR</h3>
+              <p class="text-[#00DBE7]">BASE: 750 TKN</p>
+            </div>
+          </div>
+
+          <div class="item-wrapper flex bg-[#222A3D] lg:p-2 xl:p-5 items-center">
+            <img src="src/assets/items/transcend-necklace.png" alt="transcend necklace" class="mr-5">
+            <div>
+              <h3>TRANSCEND NECKLACE</h3>
+              <p class="text-[#00DBE7]">BASE: 200 TKN</p>
+            </div>
+          </div>
+
+          <div class="item-wrapper flex bg-[#222A3D] lg:p-2 xl:p-5 items-center">
+            <img src="src/assets/items/elite-generator.png" alt="elite generator"  class="mr-5">
+            <div>
+              <h3>ELITE GENERATOR</h3>
+              <p class="text-[#00DBE7]">BASE: 750 TKN</p>
+            </div>
+          </div>
+
+          <div class="item-wrapper flex bg-[#222A3D] lg:p-2 xl:p-5 items-center">
+            <img src="src/assets/items/elite-generator.png" alt="elite generator"  class="mr-5">
+            <div>
+              <h3>ELITE GENERATOR</h3>
+              <p class="text-[#00DBE7]">BASE: 750 TKN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Column -->
+      <div id="middle-column" class="lg:col-span-6">
+
+        <!-- Calculator -->
+        <div id="calculator" class="bg-[#2D3449]/60 grid grid-cols-2 grid-rows-3 p-8 gap-8 border-[#32243B] border-2">
+
+          <!-- Calculator Left Column -->
+          <div class="col-span-1 row-span-2 flex flex-col gap-5">
+            <label for="income-tpm" class="text-[#00DBE7]">INCOME (TPM)</label>
+            <input type="number" name="income-tpm" id="income-tpm" class="bg-[#060E20] [appearance:textfield] p-3 border-b-3 border-[#5C3F3F]">
+            
+            <label for="kpm" class="text-[#00DBE7]">KILLS PER MINUTE (KPM)</label>
+            <input type="number" name="kill-bonus" id="kill-bonus" class="bg-[#060E20] [appearance:textfield] p-3 border-b-3 border-[#5C3F3F]">
+          </div>
+
+          <!-- Calculator Right Column -->
+          <div class="col-span-1 row-span-2 flex flex-col gap-5">
+            <label for="kill-bonus" class="text-[#00DBE7]">KILL BONUS</label>
+            <input type="number" name="kpm" id="kpm" class="bg-[#060E20] [appearance:textfield] p-3 border-b-3 border-[#5C3F3F]">
+
+            <label for="include-data" class="text-[#00DBE7]">FARM_CALCULATION_PROTOCOL</label>
+            <button id="include-monster-data" class="bg-[#060E20] p-3 flex items-center justify-between toggle-on">
+              <p class="text-[10px]">INCLUDE_MONSTER_DATA</p>
+
+              <!-- SVG do toggle on -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3" class="block"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm485-75q35-35 35-85t-35-85q-35-35-85-35t-85 35q-35 35-35 85t35 85q35 35 85 35t85-35Zm-285-85Z"/></svg>
+
+              <!-- SVG do toggle off -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3" class="hidden"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-80h400q66 0 113-47t47-113q0-66-47-113t-113-47H280q-66 0-113 47t-47 113q0 66 47 113t113 47Zm85-75q35-35 35-85t-35-85q-35-35-85-35t-85 35q-35 35-35 85t35 85q35 35 85 35t85-35Zm115-85Z"/></svg>
+            </button>
+          </div>
+
+          <button class="col-span-2 bg-[#DC143C] border-b-5 border-[#920022]">EXECUTE_CALCULATION</button>
+
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div id="right-column" class="lg:col-span-3">
+
+      </div>
+
+    </main>
 
     <script type="module" src="/src/main.js"></script>
   </body>
