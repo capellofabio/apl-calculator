@@ -131,14 +131,19 @@
         </div>
 
         <!-- Daily Income -->
-        <div id="daily-yield-projection" class="bg-[#622599] p-8 mt-6">
-          <div>
-            <p class="text-[#4A0080]">TEMPORAL_UNIT: 24H</p>
-            <h2 class="text-[#D1A1FF] text-3xl font-bold">DAILY_YIELD_PROJECTION</h2>
+        <div id="daily-yield-projection" class="bg-[#622599] p-8 mt-6 relative overflow-hidden">
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-[#4A0080]">TEMPORAL_UNIT: 24H</p>
+              <h2 class="text-[#D1A1FF] text-3xl font-bold">DAILY_YIELD_PROJECTION</h2>
+            </div>
+            <div class="p-3 bg-[#4A0080]/20">
+              <img src="src/assets/arrow-up-icon.png" alt="seta pra cima" class="w-5">
+            </div>
           </div>
 
           <div class="py-10">
-            <p id="daily-income" class="text-5xl font-bold">0</p>
+            <p id="daily-income" class="text-5xl font-bold text-shadow-md text-shadow-amber-50">0</p>
             <p class="text-[#4A0080]">NET REVENUE PROTOCOL</p>
           </div>
 
@@ -146,6 +151,8 @@
             <hr class="bg-[#D4FCFF] border-0 h-2 w-[70%] inline-block drop-shadow-md drop-shadow-indigo-100">
             <hr class="bg-[#4A0080]/30 border-0 h-2 w-[20%] inline-block">
           </div>
+
+          <img src="src/assets/bitcoin-image.png" alt="bitcoin" class="absolute opacity-5 top-50 -right-5">
         </div>
 
       </div>
