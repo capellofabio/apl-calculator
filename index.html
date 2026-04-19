@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   </head>
-  <body class="font-[space_grotesk] bg-[#0B1326] text-white text-xl">
+  <body class="font-[space_grotesk] bg-[#0B1326] text-white text-lg">
     <nav class="px-6 py-4 items-center flex justify-between md:justify-normal">
       <p class="font-bold text-[#DC143C] text-3xl mr-10">NITRO'S CALCULATOR</p>
       <ul id="nav-list" class="hidden md:flex gap-5 items-center text-[#DAE2FD]/60">
@@ -129,6 +129,25 @@
           </button>
 
         </div>
+
+        <!-- Daily Income -->
+        <div id="daily-yield-projection" class="bg-[#622599] p-8 mt-6">
+          <div>
+            <p class="text-[#4A0080]">TEMPORAL_UNIT: 24H</p>
+            <h2 class="text-[#D1A1FF] text-3xl font-bold">DAILY_YIELD_PROJECTION</h2>
+          </div>
+
+          <div class="py-10">
+            <p id="daily-income" class="text-5xl font-bold">0</p>
+            <p class="text-[#4A0080]">NET REVENUE PROTOCOL</p>
+          </div>
+
+          <div class="mb-5 flex items-end">
+            <hr class="bg-[#D4FCFF] border-0 h-2 w-[70%] inline-block drop-shadow-md drop-shadow-indigo-100">
+            <hr class="bg-[#4A0080]/30 border-0 h-2 w-[20%] inline-block">
+          </div>
+        </div>
+
       </div>
 
       <!-- Right Column -->
