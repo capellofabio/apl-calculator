@@ -3,6 +3,7 @@ import './style.css'
 const dropdownBtn = document.querySelector('#dropdown-menu');
 const navList = document.querySelector('#nav-list');
 const nav = document.querySelector('nav');
+const dailyIncome = document.querySelector('#daily-income')
 
 const monsterDataBtn = document.querySelector('#include-monster-data');
 const executeCalculationBtn = document.querySelector('#execute-calculation');
@@ -49,6 +50,9 @@ monsterDataBtn.addEventListener('click', () => {
   }
 })
 
+// Executa o calculo de income
+executeCalculationBtn.addEventListener('click', () => {tokenCalculation();});
+
 function tokenCalculation() {
   // Pega os valores da calculadora
   const income = document.querySelector('#income-tpm').value;
@@ -61,9 +65,6 @@ function tokenCalculation() {
   const incomeDay = incomeHour * 24 + (incomeKills * 60 * 24);
   const incomeWeek = incomeDay * 7 + (incomeKills * 60 * 24 * 7);
 
-  // Imprime o income na tela do usuario
-  alert(`Hourly Income: ${incomeHour}\nDaily Income: ${incomeDay}\nWeekly Income: ${incomeWeek}`)
-  return incomeHour, incomeDay, incomeWeek;
+  // Atualiza as secoes de income
+  dailyIncome.innerText = incomeDay.toLocaleString('pt-BR');
 }
-
-executeCalculationBtn.addEventListener('click', () => {tokenCalculation();});
