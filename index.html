@@ -101,26 +101,22 @@
 
           <!-- Calculator Left Column -->
           <div class="col-span-1 lg:row-span-2 flex flex-col gap-5">
-            <label for="income-tpm" class="text-[#00DBE7]">INCOME (TPM)</label>
-            <input type="number" name="income-tpm" id="income-tpm" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">
+            <label for="income-tpc" class="text-[#00DBE7]">INCOME (TPC)</label>
+            <input type="number" name="income-tpc" id="income-tpc" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">
             
             <label for="kpm" class="text-[#00DBE7]">KILLS PER MINUTE (KPM)</label>
-            <input type="number" name="kill-bonus" id="kill-bonus" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">
+            <input type="number" name="kpm" id="kpm" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">
           </div>
 
           <!-- Calculator Right Column -->
           <div class="col-span-1 lg:row-span-2 flex flex-col gap-5">
+            <!-- <label for="kill-bonus" class="text-[#00DBE7]">KILL BONUS</label>
+            <input type="numbr" name="kpm" id="kpm" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">-->
+            <label for="cycle-time" class="text-[#00DBE7]">TIME PER CYCLE (seconds)</label>
+            <input type="number" name="cycle-time" id="cycle-time" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">
+
             <label for="kill-bonus" class="text-[#00DBE7]">KILL BONUS</label>
-            <input type="number" name="kpm" id="kpm" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">
-
-            <label for="include-monster-data" class="text-[#00DBE7]">FARM_CALCULATION_PROTOCOL</label>
-            <button id="include-monster-data" class="bg-[#060E20] p-3 flex items-center justify-between toggle-on">
-              <p class="text-[#E6BDBC]">INCLUDE_MONSTER_DATA</p>
-
-              <!-- SVG do toggle on -->
-              <img src="src/assets/toggle-on.png" alt="toggle on button" class="block" id="include-data">
-              <img src="src/assets/toggle-off.png" alt="toggle off button" class="hidden">
-            </button>
+            <input type="number" name="kill-bonus" id="kill-bonus" class="bg-[#060E20] p-3 border-b-3 border-[#5C3F3F]">
           </div>
 
           <button id="execute-calculation" class="lg:col-span-2 bg-[#DC143C] border-b-5 border-[#920022] mt-6 font-bold text-lg flex items-center justify-center gap-3 max-h-20">
