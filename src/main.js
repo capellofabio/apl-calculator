@@ -8,7 +8,6 @@ const hourlyIncomeText = document.querySelector('#hourly-income');
 const dailyIncomeText = document.querySelector('#daily-income');
 const weeklyIncomeText = document.querySelector('#weekly-income');
 
-const monsterDataBtn = document.querySelector('#include-monster-data');
 const executeCalculationBtn = document.querySelector('#execute-calculation');
 
 // Adiciona interatividade para o botao do nav
@@ -24,64 +23,30 @@ dropdownBtn.addEventListener('click', () => {
   }
 })
 
-// Adiciona interatividade no icone do botao de execucao da calculadora
-monsterDataBtn.addEventListener('click', () => {
-  if (monsterDataBtn.classList.contains('toggle-on')) {
-    // Toggle Value
-    monsterDataBtn.classList.remove('toggle-on');
-    monsterDataBtn.classList.add('toggle-off')
-
-    // Esconde icone do toggle on
-    monsterDataBtn.children[1].classList.remove('block');
-    monsterDataBtn.children[1].classList.add('hidden');
-
-    // Mostra icone do toggle off
-    monsterDataBtn.children[2].classList.add('block');
-    monsterDataBtn.children[2].classList.remove('hidden');
-  } else if (monsterDataBtn.classList.contains('toggle-off')) {
-    // Toggle Value
-    monsterDataBtn.classList.remove('toggle-off');
-    monsterDataBtn.classList.add('toggle-on')
-
-    // Mostra icone do toggle on
-    monsterDataBtn.children[1].classList.remove('hidden');
-    monsterDataBtn.children[1].classList.add('block');
-
-    // Esconde icone do toggle off
-    monsterDataBtn.children[2].classList.add('hidden');
-    monsterDataBtn.children[2].classList.remove('block');
-  }
-})
-
 // Executa o calculo de income
 executeCalculationBtn.addEventListener('click', () => {tokenCalculation();});
 
 function tokenCalculation() {
   // Pega os valores da calculadora
-  const income = document.querySelector('#income-tpm').value;
+  const tpc = document.querySelector('#income-tpc').value;
+  const cycleTime = document.querySelector('#cycle-time').value;
   const killBonus = document.querySelector('#kill-bonus').value;
   const killsPerMinute = document.querySelector('#kpm').value;
 
-  // Declara variaveis de income
+  // Calcula valor das kills
   const killsIncome = killBonus * killsPerMinute;
-  let hourlyIncome = income * 60;
-  let dailyIncome = hourlyIncome * 24;
-  let weeklyIncome = dailyIncome * 7;
+  const hourlyKillsIncome = killsIncome * 60;
+  const dailyKillsIncome = hourlyKillsIncome * 24;
+  const weeklyKillsIncome = dailyKillsIncome * 7;
 
-  // Atualiza o income
-  if (document.querySelector('#include-data').classList.contains('block')) {
-    // Realiza os calculos
-    hourlyIncome += killsIncome * 60;
-    dailyIncome += killsIncome * 24;
-    weeklyIncome += killsIncome * 7;
+  // Calcula o income total
+  const tpm = tpc / cycleTime * 60;
+  const hourlyIncome = tpm * 60 + hourlyKillsIncome;
+  const dailyIncome = hourlyIncome * 24;
+  const weeklyIncome = dailyIncome * 7;
 
-    // Atualiza os textos
-    hourlyIncomeText.innerText = hourlyIncome.toLocaleString('pt-BR');
-    dailyIncomeText.innerText = dailyIncome.toLocaleString('pt-BR');
-    weeklyIncomeText.innerText = weeklyIncome.toLocaleString('pt-BR');
-  } else if (document.querySelector('#include-data').classList.contains('hidden')){
-    hourlyIncomeText.innerText = hourlyIncome.toLocaleString('pt-BR');
-    dailyIncomeText.innerText = dailyIncome.toLocaleString('pt-BR');
-    weeklyIncomeText.innerText = weeklyIncome.toLocaleString('pt-BR');
-  }
+  // Atualiza os textos
+  hourlyIncomeText.innerText = hourlyIncome.toLocaleString('pt-BR');
+  dailyIncomeText.innerText = dailyIncome.toLocaleString('pt-BR');
+  weeklyIncomeText.innerText = weeklyIncome.toLocaleString('pt-BR');
 }
