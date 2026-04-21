@@ -3,7 +3,10 @@ import './style.css'
 const dropdownBtn = document.querySelector('#dropdown-menu');
 const navList = document.querySelector('#nav-list');
 const nav = document.querySelector('nav');
-const dailyIncomeText = document.querySelector('#daily-income')
+
+const hourlyIncomeText = document.querySelector('#hourly-income');
+const dailyIncomeText = document.querySelector('#daily-income');
+const weeklyIncomeText = document.querySelector('#weekly-income');
 
 const monsterDataBtn = document.querySelector('#include-monster-data');
 const executeCalculationBtn = document.querySelector('#execute-calculation');
@@ -67,11 +70,18 @@ function tokenCalculation() {
 
   // Atualiza o income
   if (document.querySelector('#include-data').classList.contains('block')) {
+    // Realiza os calculos
     hourlyIncome += killsIncome * 60;
     dailyIncome += killsIncome * 24;
     weeklyIncome += killsIncome * 7;
+
+    // Atualiza os textos
+    hourlyIncomeText.innerText = hourlyIncome.toLocaleString('pt-BR');
     dailyIncomeText.innerText = dailyIncome.toLocaleString('pt-BR');
+    weeklyIncomeText.innerText = weeklyIncome.toLocaleString('pt-BR');
   } else if (document.querySelector('#include-data').classList.contains('hidden')){
+    hourlyIncomeText.innerText = hourlyIncome.toLocaleString('pt-BR');
     dailyIncomeText.innerText = dailyIncome.toLocaleString('pt-BR');
+    weeklyIncomeText.innerText = weeklyIncome.toLocaleString('pt-BR');
   }
 }
