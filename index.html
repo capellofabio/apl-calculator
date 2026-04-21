@@ -123,7 +123,7 @@
             </button>
           </div>
 
-          <button id="execute-calculation" class="lg:col-span-2 bg-[#DC143C] border-b-5 border-[#920022] mt-6 font-bold text-lg flex items-center justify-center gap-3">
+          <button id="execute-calculation" class="lg:col-span-2 bg-[#DC143C] border-b-5 border-[#920022] mt-6 font-bold text-lg flex items-center justify-center gap-3 max-h-20">
             <p class="text-2xl">EXECUTE_CALCULATION</p>
             <img src="src/assets/execute-calc-icon.png" alt="energy icon">
           </button>
@@ -159,6 +159,35 @@
 
       <!-- Right Column -->
       <div id="right-column" class="lg:col-span-3">
+
+        <!-- Hourly Income -->
+        <div class="flex flex-col border-t-2 border-red-500 p-6 bg-[#131B2E] gap-20">
+          <div class="flex justify-between items-center">
+            <p class="text-[#E6BDBC]">TEMPORAL_UNIT: 1H</p>
+            <img src="src/assets/1h-icon.png" alt="icone de relogio">
+          </div>
+          <div class="">
+            <p id="hourly-income" class="font-bold text-shadow-md text-shadow-red-300 text-[#FFB3B3] text-3xl">0</p>
+            <p class="text-[#00DBE7]">TOKENS_CALCULATED</p>
+          </div>
+          <div class="flex items-center">
+            <hr class="bg-[#5C3F3F] border-0 h-0.5 w-[70%] inline-block drop-shadow-md drop-shadow-[#5C3F3F]">
+            <p class="text-[#5C3F3F] pl-3 text-sm">ESTIMATED</p>
+          </div>
+        </div>
+
+        <!-- Weekly Income -->
+        <div class="flex flex-col border-r-2 border-[#00DBE7] p-6 bg-[#2D3449] gap-16 mt-6 lg:mt-31">
+          <div class="flex justify-between items-center">
+            <p class="text-[#E6BDBC]">TEMPORAL_UNIT: 7D</p>
+            <img src="src/assets/7d-icon.png" alt="icone de calendario">
+          </div>
+          <div>
+            <p id="weekly-income" class="font-bold text-4xl">0</p>
+            <p class="text-[#00DBE7]">PROJECTED FORTUNE</p>
+          </div>
+          <p class="p-1 bg-[#00DBE7]/10 text-[#00DBE7] border border-[#00DBE7]/20 w-35 text-center">TACTICAL MAX</p>
+        </div>
 
       </div>
 
