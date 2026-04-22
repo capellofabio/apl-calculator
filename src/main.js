@@ -45,8 +45,23 @@ function tokenCalculation() {
   const dailyIncome = hourlyIncome * 24;
   const weeklyIncome = dailyIncome * 7;
 
-  // Atualiza os textos
+  // Atualiza os resultados
   hourlyIncomeText.innerText = hourlyIncome.toLocaleString('pt-BR');
   dailyIncomeText.innerText = dailyIncome.toLocaleString('pt-BR');
   weeklyIncomeText.innerText = weeklyIncome.toLocaleString('pt-BR');
+
+  // Adiciona animacao aos resultados
+  hourlyIncomeText.classList.add('animate-pulse');
+  setTimeout(() => {
+    hourlyIncomeText.classList.remove('animate-pulse');
+  }, 4000);
+  dailyIncomeText.classList.add('animate-pulse');
+  setTimeout(() => {
+    dailyIncomeText.classList.remove('animate-pulse');
+  }, 4000);
+  weeklyIncomeText.classList.add('animate-pulse');
+  setTimeout(() => {
+    weeklyIncomeText.classList.remove('animate-pulse');
+  }, 4000);
+  
 }
